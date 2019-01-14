@@ -1,0 +1,18 @@
+{
+  // Overall
+  "workbench.colorTheme": "Atom One Dark",
+  "window.zoomLevel": -1,
+  // Editor
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  // Misc
+  "typescript.check.npmIsInstalled": false,
+  "git.autofetch": true,
+  
+  // Plugins
+  "todohighlight.isEnable": true,
+  "gitlens.keymap": "alternate",
+  "gitlens.advanced.messages": {
+      "suppressShowKeyBindingsNotice": true
+  },
+}
