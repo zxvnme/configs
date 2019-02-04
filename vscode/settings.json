@@ -1,18 +1,32 @@
 {
   // Overall
+  "window.zoomLevel": 1,
+  "terminal.integrated.fontFamily": "Consolas",
+  // Workbench
   "workbench.colorTheme": "Atom One Dark",
-  "window.zoomLevel": -1,
+  "workbench.iconTheme": "vscode-icons",
   // Editor
+  "editor.fontFamily": "scientifica",
   "editor.tabSize": 2,
+  "editor.fontSize": 17,
+  "editor.lineHeight": 22.65,
+  "editor.letterSpacing": 0.5,
+  "editor.fontWeight": "500",
+  "editor.fontLigatures": true,
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 2,
+  "editor.cursorBlinking": "phase",
+  "editor.renderWhitespace": "all",
+  "editor.snippetSuggestions": "top",
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.glyphMargin": true,
+  "workbench.editor.enablePreview": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
   "editor.detectIndentation": false,
   // Misc
-  "typescript.check.npmIsInstalled": false,
   "git.autofetch": true,
-  
   // Plugins
   "todohighlight.isEnable": true,
-  "gitlens.keymap": "alternate",
-  "gitlens.advanced.messages": {
-      "suppressShowKeyBindingsNotice": true
-  },
 }
