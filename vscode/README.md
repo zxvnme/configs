@@ -6,7 +6,7 @@ Extensions: `File > Preferences > Extensions` ( Ctrl+Shift+X ) then download all
 
 ### Extensions installed:
 
-- Atom One Dark Theme ([download](https://marketplace.visualstudio.com/items?itemName=akamud.vscode-theme-onedark))
+- Monokai Pro ([download](https://marketplace.visualstudio.com/items?itemName=monokai.theme-monokai-pro-vscode))
 - Auto-Open Markdown Preview ([download](https://marketplace.visualstudio.com/items?itemName=hnw.vscode-auto-open-markdown-preview))
 - Discord Presence ([download](https://marketplace.visualstudio.com/items?itemName=icrawl.discord-vscode))
 - gitignore ([download](https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore))
