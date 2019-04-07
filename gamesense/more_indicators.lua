@@ -11,11 +11,12 @@ local function on_paint(ctx)
 	end
 
 	if ui.get(force_bodyaim_control) then
-		client.draw_text(ctx, (screen_size_x / 2) , (screen_size_y / 2) - 75, 255, 255, 255, 255, "c+", 0, "FORCE BAIM")
+		client.draw_indicator(ctx, 39, 174, 96, 255, "FORCE BAIM")
+
 	end
 
 	if ui.get(double_tap_control) then
-		client.draw_text(ctx, (screen_size_x / 2) , (screen_size_y / 2) - 50, 255, 255, 255, 255, "c+", 0, "2x TAP")
+		client.draw_indicator(ctx, 39, 174, 96, 255, "2x TAP")
 	end
 end
 
