@@ -13,4 +13,5 @@ Extensions: `File > Preferences > Extensions` ( Ctrl+Shift+X ) then download all
 - npm Intellisense ([download](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense))
 - Path Intellisense ([download](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense))
 - TODO Highlight ([download](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight))
-- vscode-icons [download](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons)
+- vscode-icons ([download](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons))
+- vscode-lua ([download](https://marketplace.visualstudio.com/items?itemName=trixnz.vscode-lua))

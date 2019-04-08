@@ -3,8 +3,8 @@
   "window.zoomLevel": 1,
   "terminal.integrated.fontFamily": "Consolas",
   // Workbench
-  "workbench.colorTheme": "Monokai Pro",
-  "workbench.iconTheme": "Monokai Pro Icons",
+  "workbench.colorTheme": "Default Light+",
+  "workbench.iconTheme": "Monokai Pro (Filter Ristretto) Icons",
   // Editor
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
@@ -12,4 +12,5 @@
   "git.autofetch": true,
   // Plugins
   "todohighlight.isEnable": true,
+  "lua.format.lineWidth": 100
 }
