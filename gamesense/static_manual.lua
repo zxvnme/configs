@@ -1,10 +1,12 @@
 -- api methods
-local client_draw_rectangle, entity_get_local_player, entity_get_prop, ui_get, ui_set, ui_set_visible, ui_reference, ui_new_checkbox, ui_new_hotkey, ui_new_combobox, renderer_text, renderer_measure_text, client_screen_size, client_set_event_callback =
-      client.draw_rectangle, entity.get_local_player, entity.get_prop, ui.get, ui.set, ui.set_visible, ui.reference, ui.new_checkbox, ui.new_hotkey, ui.new_combobox, renderer.text, renderer.measure_text, client.screen_size, client.set_event_callback
+local client_draw_rectangle, entity_get_local_player, entity_get_prop, ui_get, ui_set, ui_set_visible, ui_reference, ui_new_slider, ui_new_checkbox, ui_new_hotkey, ui_new_combobox, renderer_text, renderer_measure_text, client_screen_size, client_set_event_callback =
+      client.draw_rectangle, entity.get_local_player, entity.get_prop, ui.get, ui.set, ui.set_visible, ui.reference, ui.new_slider, ui.new_checkbox, ui.new_hotkey, ui.new_combobox, renderer.text, renderer.measure_text, client.screen_size, client.set_event_callback
 -- new controls
 local manual_antiaim_control = ui_new_checkbox("AA", "Other", "Manual antiaim")
 local manual_antiaim_hotkey_control = ui_new_hotkey("AA", "Other", "Yaw flip hotkey", false)
 local indicator_type_control = ui_new_combobox("AA", "Other", "Indicator style", {"Arrows", "Triangles"})
+local indicator_customise_control = ui_new_checkbox("AA", "Other", "Customise indicator")
+local indicator_customise_slider_x_offset = ui_new_slider("AA", "Other", "X Offset", 1, 500, 10, true, "px")
 -- references
 local antiaim_yaw_reference, antiaim_yaw_slider_reference = ui_reference("AA", "Anti-aimbot angles", "Yaw")
 local antiaim_body_yaw_reference, antiaim_body_yaw_jitter_slider_reference = ui_reference("AA", "Anti-aimbot angles", "Yaw jitter")
@@ -53,12 +55,12 @@ local function draw_indicator(type)
   right_text_width, right_text_height = renderer_measure_text("+", text.right)
 
   -- left container with text
-  draw_container(ctx, (screen_width / 2) - container_width - 5, screen_height - container_height - 10, container_width, container_height)
-  renderer_text(((screen_width / 2) - container_width) + left_text_width, screen_height - container_height + left_text_height - 12.5, l_r, l_g, l_b, l_a, "c+", 0, text.left)
+  draw_container(ctx, (screen_width / 2) - container_width - 5, screen_height - container_height - ui_get(indicator_customise_slider_x_offset), container_width, container_height)
+  renderer_text(((screen_width / 2) - container_width) + left_text_width, screen_height - container_height + left_text_height - ui_get(indicator_customise_slider_x_offset) - 2.5, l_r, l_g, l_b, l_a, "c+", 0, text.left)
 
   -- right container with text
-  draw_container(ctx, (screen_width / 2) + 5, screen_height - container_height - 10, container_width, container_height)
-  renderer_text(((screen_width / 2) + container_width) - right_text_width, screen_height - container_height + right_text_height - 12.5, r_r, r_g, r_b, r_a, "c+", 0, text.right)
+  draw_container(ctx, (screen_width / 2) + 5, screen_height - container_height - ui_get(indicator_customise_slider_x_offset), container_width, container_height)
+  renderer_text(((screen_width / 2) + container_width) - right_text_width, screen_height - container_height + right_text_height - ui_get(indicator_customise_slider_x_offset) - 2.5, r_r, r_g, r_b, r_a, "c+", 0, text.right)
 end
 -- handle direction
 local function handle_direction()
@@ -108,12 +110,18 @@ end
 
 -- paint callback
 local function on_paint(ctx)
+    ui_set_visible(indicator_customise_slider_x_offset, false)
+    ui_set_visible(indicator_customise_control, false)
     ui_set_visible(manual_antiaim_hotkey_control, false)
     ui_set_visible(indicator_type_control, false)
     if ui_get(manual_antiaim_control) then
       ui_set_visible(manual_antiaim_hotkey_control, true)
       ui_set_visible(indicator_type_control, true)
+      ui_set_visible(indicator_customise_control, true)
       draw_indicator(ui_get(indicator_type_control))
+    end
+    if ui_get(indicator_customise_control) then
+      ui_set_visible(indicator_customise_slider_x_offset, true)
     end
 end
 -- setup command callback
